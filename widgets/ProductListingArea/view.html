@@ -1,0 +1,12 @@
+<div id="products-listing-area" class="col-sm-9">
+    <!-- <span id="effect-element" data-bind="text:effect()">test</span> -->
+    <div class="card-effect">
+        <div id="products-list" data-bind="foreach: filteredProducts">
+            Product Id :<span data-bind="text: prodId"></span>
+             | Product Name :<span data-bind="text: name"></span>
+             | First Sku Id :<span data-bind="text: skus[0].skuId"></span>
+             | Brand :<span data-bind="text: brand"></span>
+            <br>
+        </div>
+    </div>
+</div>
