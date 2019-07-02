@@ -12,7 +12,7 @@ var viewModel = new facetViewModel();
 
 function ProductsViewModel(){
     self = this;
-    self.filter = ko.observable('Men');
+    self.filter = ko.observable('');
     self.justBrands =  ko.computed(function() {
         var brands = ko.utils.arrayMap(api.getProducts().items, function(item) {
             return {"brand":item.brand};
