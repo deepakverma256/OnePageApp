@@ -4,6 +4,9 @@ performLateBinding(listingViewModel, 'filter');
 performLateBinding(listingViewModel, 'brand-facets');
 performLateBinding(listingViewModel, 'category-facets');
 performLateBinding(listingViewModel, 'price-facet');
+performLateBinding(listingViewModel, 'color-facets');
+performLateBinding(listingViewModel, 'rating-facet');
+performLateBinding(listingViewModel, 'size-facet');
 //performLateBindingByClass(productsViewModel, 'brand-checkbox');
 
 

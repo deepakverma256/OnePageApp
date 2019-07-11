@@ -23,7 +23,6 @@ function loadWidget(widgetName, parentElement) {
     });
 }
 
-
 /* 
 The function binds the element with the passed id to the viewModel.
 */
@@ -51,7 +50,16 @@ var stringStartsWith = function (string, startsWith) {
 
 var isArrayContains = function(element, arr){
     var index = $.inArray(element, arr);
-    if(arr.length == 0) return true;
+    if(index < 0){
+        return false;
+    }else{
+        return true;
+    }
+};
+
+var isArrayContainsItemForFilter = function(element, arr){
+    var index = $.inArray(element, arr);
+    if(arr.length == 0 || element == undefined) return true;
     if(index < 0){
         return false;
     }else{

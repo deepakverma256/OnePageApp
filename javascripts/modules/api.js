@@ -17,6 +17,8 @@ var api = function () {
                 data = JSON.parse(data);
                 this.log(data.items);
                 var newItems = [];
+                var colors = [];
+                var sizes = [];
 
                 $.each(data.items,(function(i,v){
                     var foundProd = getProductFromModel(newItems,v.prodId);
@@ -32,6 +34,7 @@ var api = function () {
                             'minRating': v.rating,
                             'maxRating': v.rating,
                             'colors' : [v.color],
+                            'sizes' : [v.size],
                             'skus': [{'skuId':v.skuId,
                                 "color": v.color,
                                 "imageurl": v.imageurl,
@@ -53,19 +56,22 @@ var api = function () {
                         }else if(v.rating < foundProd.minRating){
                             foundProd.minRating = v.rating;
                         }
-                        
+
+                        foundProd.sizes.push(v.size);
                         foundProd.colors.push(v.color);
                         foundProd.skus.push({'skuId':v.skuId,
-                        "color": v.color,
-                        "imageurl": v.imageurl,
-                        "size": v.size,
-                        "rating": v.rating,
-                        "price": v.price
+                            "color": v.color,
+                            "imageurl": v.imageurl,
+                            "size": v.size,
+                            "rating": v.rating,
+                            "price": v.price
                         });
                     }
+                    if(!isArrayContains(v.size,sizes)) sizes.push(v.size);
+                    if(!isArrayContains(v.color,colors)) colors.push(v.color);
                 }));
-
-                
+                products.sizes = sizes;
+                products.colors = colors;
                 products.items = newItems;
                 console.log('prodcts API ==> ', products);
                 
