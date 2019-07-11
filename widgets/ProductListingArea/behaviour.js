@@ -56,7 +56,6 @@ ko.components.register('product-tile', {
                     console.log('read ==> ', self);
                     
                     var _skus = self.skus;
-
                     var allSizes = self.loadSizes(_skus);
 
                     self.skuSizes(allSizes);

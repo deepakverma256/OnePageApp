@@ -21,7 +21,7 @@
                 </ul>
             </div>
             <div class="facet" >
-                    <label for="price-facets">Price:</label>
+                    <label for="price-facet">Price:</label>
                     <ul class="list-group" id="price-facets">
                         <li class="list-group-item" >
                             <div class="form-check">
@@ -32,6 +32,8 @@
                         </li>
                     </ul>
                 </div>
+
+
         <div class="facet" >
             <button class="accordion" >Brands:</button>
             <ul class="list-group" data-bind="foreach: justBrands" id="brand-facets">
@@ -51,7 +53,7 @@
                     <div class="form-check-inline">
                         <label class="form-check-label d-flex flex-row align-items-center">
                             <input type="radio" class="form-check-input color-checkbox" value="" name="color" data-bind="checked: $parent.colorFilter, value: $data">
-                            <span class="card-text color-circle form-check-input" data-bind="style: {'background-color' : $data}"></span>
+                            <span class="card-text circle form-check-input" data-bind="style: {'background-color' : $data}"></span>
                             <span data-bind="text: $data"></span>
                         </label>
                     </div>
@@ -65,7 +67,7 @@
                     <div class="form-check">
                         <label class="form-check-label">
                             <input type="radio" class="form-check-input rating-checkbox" value="" name="rating" data-bind="checked: $parent.ratingFilter, value: $data">
-                            <span data-bind="text: $data"></span><span>+</span>
+                            <span data-bind="text: $data"></span><span>★ & above</span>
                         </label>
                     </div>
                 </li>
